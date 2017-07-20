@@ -48,6 +48,7 @@ server.post('/', function(req, res) {
     console.log(req.query);
     req.session.login == "true";
 
+    console.log(res.query);
     res.redirect('/');
 });
 
