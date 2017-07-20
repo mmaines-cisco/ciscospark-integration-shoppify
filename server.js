@@ -86,7 +86,7 @@ server.get('/', function(req,res) {
 
             axios.post(webhookAPIUrl, webhookObject, axiosHeaders)
             .then(function(response) {
-                //console.log(response);
+                console.log("\n\n\n\n", response);
             })
             .catch(function(error) {
                 console.log(error);
