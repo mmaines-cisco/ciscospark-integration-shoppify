@@ -10,6 +10,10 @@ const axios = require('axios');
 
 //------------------- Remove Later---------------
 const ciscospark_access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2QzNDczNTdmYjUtMmEw";
+
+const spark_config = {
+    sampleRoomId: "Y2lzY29zcGFyazovL3VzL1JPT00vNDRjYTRlZjAtMzRkZi0xMWU3LWJjNzgtNWIzNDEzMDJjNTM4"
+}
 //------------------------------------------------
 
 const env = JSON.parse(fs.readFileSync('./env.json', 'utf8'));
@@ -68,7 +72,7 @@ server.get('/', function(req,res) {
             let store_name =req.query.state;
 
             db.push({'store_name': store_name, 'access_token': access_token});
-            fs.writeFileSync('./db/connected-stores.json', db);
+            //fs.writeFileSync('./db/connected-stores.json', db);
 
             console.log(store_name);
 
@@ -123,6 +127,28 @@ server.post('/shopify/webhooks', function(req, res) {
     console.log(req.query);
     console.log('hello3');
     console.log(req.body);
+
+    let content = {
+        "webhook": {
+            "roomId": spark_config.sampleRoomId,
+            "markdown": req.body,
+        }
+    }
+
+    let axiosHeaders = {
+            headers: {
+                'Authorization': "Bearer " + ciscospark_access_token,
+                'X-Shopify-Access-Token': ciscospark_access_token
+            }
+    };
+
+    axios.post('https://api.ciscospark.com/v1/messages', content, axiosHeaders)
+    .then(function(resonse) {
+        console.log(response);
+    })
+    .catch(function(error) {
+        throw new Error(error);
+    });
 
     res.sendStatus(200);
 });
