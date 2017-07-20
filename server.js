@@ -9,7 +9,7 @@ const fs = require('fs');
 const axios = require('axios');
 
 //------------------- Remove Later---------------
-const ciscospark_access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2QzNDczNTdmYjUtMmEw";
+const ciscospark_access_token = "MWJhN2Q4N2YtZmNiNS00MDMyLWE1YzAtOTZiMTY4NjY5OGM4ZjQzM2VhNDMtMWMx";
 
 const spark_config = {
     sampleRoomId: "Y2lzY29zcGFyazovL3VzL1JPT00vNDRjYTRlZjAtMzRkZi0xMWU3LWJjNzgtNWIzNDEzMDJjNTM4"
