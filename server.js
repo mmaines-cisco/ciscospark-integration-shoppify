@@ -33,10 +33,10 @@ let auth = function(req, res, next) {
     else
     {
         //https://api.ciscospark.com/v1/authorize?response_type=code&client_id=Cf14c66a547d565a58a107141a509e8f4d8a7367e7a9cd9966675387841c41ca9&scope=spark:rooms_read,spark:messages_write&state=youbetcha&redirect_uri=https://requestb.in/zh18zhzh
-        //const url = `https://api.ciscospark.com/v1/authorize?response_type=code&client_id=` + env.ciscospark["client-id"] + `&scope=` + env.ciscospark.scope + `&redirect_uri=https://requestb.in/zh18zhzh`;
+        const url = `https://api.ciscospark.com/v1/authorize?response_type=code&client_id=` + env.ciscospark["client-id"] + `&scope=` + env.ciscospark.scope + `&redirect_uri=` + env.ciscospark[redirect-uri];
         //console.log(url);
-        //res.redirect(url);
-        console.log("HELOOOO");
+        res.redirect(url);
+        //console.log("HELOOOO");
         next();
     }
         
@@ -45,6 +45,7 @@ let auth = function(req, res, next) {
 server.get('/', function(req,res) {
 
     if(req.query.code) {
+        req.session.login="true"
         console.log(req.query.code);
         res.query = "";
 
@@ -66,12 +67,8 @@ server.get('/', function(req,res) {
     res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
-server.post('/', function(req, res) {
-    console.log(req.params);
-    console.log("session.login: ", req.session.login);
-    console.log('hello2');
-
-    res.send(200);
+server.post('/test', function(req, res) {
+    
 });
 
 server.post('/shopify/access_code', function(req, res) {
