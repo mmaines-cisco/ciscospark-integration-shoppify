@@ -54,7 +54,7 @@ server.get('/', function(req,res) {
             'code': req.query.code
         })
         .then(function (response) {
-            console.log(response);
+            console.log(response.data);
         })
         .catch(function (error) {
             console.log(error);
