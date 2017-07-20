@@ -9,11 +9,13 @@ const fs = require('fs');
 const axios = require('axios');
 
 //------------------- Remove Later---------------
-const access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2QzNDczNTdmYjUtMmEw";
+const ciscospark_access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2QzNDczNTdmYjUtMmEw";
 //------------------------------------------------
 
 const env = JSON.parse(fs.readFileSync('./env.json', 'utf8'));
 console.log(env);
+
+const db = JSON.parse(fs.readFileSync('./db/connected-stores.json', 'utf8'));
 
 let server = express();
 
@@ -28,8 +30,8 @@ server.use(session({
     saveUninitialized: true
 }));
 
-// server.engine('handlebars', exphbs({defaultLayout: 'main', layoutsDir: path.join(__dirname, "src", "views")})); 
-// server.set('view engine', 'handlebars');
+ //server.engine('handlebars', exphbs({defaultLayout: 'main'})); 
+ //server.set('view engine', 'handlebars');
 
 server.use(express.static(path.join(__dirname, 'src')));
 
@@ -62,6 +64,11 @@ server.get('/', function(req,res) {
         })
         .then(function (response) {
             console.log(response.data);
+            let access_token = response.data.access_token;
+            let store_name =req.query.state;
+
+            console.log(store_name);
+
         })
         .catch(function (error) {
             console.log(error);
@@ -70,6 +77,7 @@ server.get('/', function(req,res) {
         });
     }  
 
+    //res.render('connected-stores');
     res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
@@ -89,6 +97,6 @@ server.post('/shopify/webhooks', function(req, res) {
     res.sendStatus(200);
 });
 
-server.listen(process.env.port || 80, function () {
+server.listen(process.env.port || 3000, function () {
   console.log('Example app listening on port 80...');
 });
