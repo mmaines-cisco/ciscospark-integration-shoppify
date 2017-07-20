@@ -97,6 +97,6 @@ server.post('/shopify/webhooks', function(req, res) {
     res.sendStatus(200);
 });
 
-server.listen(process.env.port || 80, function () {
+server.listen(80, function () {
   console.log('Example app listening on port 80...');
 });
