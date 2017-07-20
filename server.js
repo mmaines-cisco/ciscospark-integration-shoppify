@@ -140,7 +140,7 @@ server.post('/shopify/webhooks', function(req, res) {
     };
 
     axios.post('https://api.ciscospark.com/v1/messages', content, axiosHeaders)
-    .then(function(resonse) {
+    .then(function(response) {
         console.log(response);
     })
     .catch(function(error) {
