@@ -67,7 +67,7 @@ server.get('/', function(req,res) {
     res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
-server.post('/test', auth, function(req, res) {
+server.get('/test', auth, function(req, res) {
     res.send(200);
 });
 
