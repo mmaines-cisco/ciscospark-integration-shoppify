@@ -57,10 +57,10 @@ connectStoreButton.onclick = function() {
 
 
 let axiosHeaders = {
-            headers: {
-                'Authorization': "Bearer " + ciscospark_access_token
-            }
-    };
+        headers: {
+            'Authorization': "Bearer " + ciscospark_access_token
+        }
+};
 
 axios.get("https://api.ciscospark.com/v1/rooms", axiosHeaders)
 .then(function(response){
