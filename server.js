@@ -69,6 +69,30 @@ server.get('/', function(req,res) {
 
             console.log(store_name);
 
+            let webhookObject = {
+                "webhook": {
+                    "topic": "orders\/create",
+                    "address": "http:\/\/162.243.24.208\/shopify\/webhooks?store_name=" + store_name,
+                    "format": "json"
+                }
+            }
+
+            let axiosHeaders = {
+                    headers: {'Authorization': "bearer" + access_token}
+            };
+
+            let webhookAPIUrl = "https://" + store_name + ".myshopify.com/admin/webhooks";
+            console.log("webhookObject: ", webhookObject);
+
+            axios.post(webhookAPIUrl, webhookObject, axiosHeaders)
+            .then(function(response) {
+                console.log(response);
+            })
+            .catch(function(error) {
+                console.log(error);
+                throw new Error(error);
+            });
+
         })
         .catch(function (error) {
             console.log(error);
