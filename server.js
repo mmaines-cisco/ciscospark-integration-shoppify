@@ -42,7 +42,9 @@ let auth = function(req, res, next) {
         
 };
 
-server.get('/', auth, function(req,res) {
+server.get('/', function(req,res) {
+    console.log('hello');
+
     if(req.params.code)
         res.send(200);
     else
