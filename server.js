@@ -47,16 +47,11 @@ server.get('/', function(req,res) {
 });
 
 
-server.post('/', function(req, res) {
-    console.log(req.query);
-    req.session.login == "true";
-
-    console.log(res.query);
-    //res.redirect('/');
-});
-
 server.post('/shopify/access_code', function(req, res) {
     console.log(res.query);
+    req.session.login == "true";
+
+    req.query = "";
 
     res.redirect('/');
 });
