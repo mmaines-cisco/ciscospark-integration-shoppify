@@ -49,7 +49,7 @@ server.post('/', function(req, res) {
     req.session.login == "true";
 
     console.log(res.query);
-    res.redirect('/');
+    //res.redirect('/');
 });
 
 server.post('/shopify/access_code', function(req, res) {
