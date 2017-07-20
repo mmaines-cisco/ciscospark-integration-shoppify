@@ -43,10 +43,10 @@ let auth = function(req, res, next) {
 };
 
 server.get('/', function(req,res) {
-    console.log('hello');
-
-    if(req.params.code)
+    if(req.params) {
+        console.log(req.params);
         res.send(200);
+    }  
     else
         res.sendFile(path.join(__dirname, 'index.html')); 
 });
