@@ -67,6 +67,9 @@ server.get('/', function(req,res) {
             let access_token = response.data.access_token;
             let store_name =req.query.state;
 
+            db.push({'store_name': store_name, 'access_token': access_token});
+            fs.writeFileSync('./db/connected-stores.json', db);
+
             console.log(store_name);
 
             let webhookObject = {
