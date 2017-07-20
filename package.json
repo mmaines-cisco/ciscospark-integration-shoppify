@@ -9,6 +9,7 @@
   "author": "Mason Maines",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "ciscospark": "^1.4.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
