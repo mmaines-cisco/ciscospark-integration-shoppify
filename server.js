@@ -44,7 +44,7 @@ let auth = function(req, res, next) {
 
 server.get('/', function(req,res) {
     if(req.params) {
-        console.log(req.params);
+        console.log(req.params.code);
         res.send(200);
     }  
     else
