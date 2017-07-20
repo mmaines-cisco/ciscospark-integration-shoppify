@@ -46,7 +46,7 @@ server.get('/', function(req,res) {
 
     if(req.query.code) {
         console.log(req.query.code);
-        res.sendCode(200);
+        res.send(200);
     }  
     else
         res.sendFile(path.join(__dirname, 'index.html')); 
