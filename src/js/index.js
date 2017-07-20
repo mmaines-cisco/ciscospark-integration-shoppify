@@ -56,17 +56,20 @@ connectStoreButton.onclick = function() {
     window.location.replace(url);
 }
 
+getRoomsButton.onclick = function() {
 
-let axiosHeaders = {
-        headers: {
-            'Authorization': "Bearer " + ciscospark_access_token
-        }
-};
+    let axiosHeaders = {
+            headers: {
+                'Authorization': "Bearer " + ciscospark_access_token
+            }
+    };
 
-axios.get("https://api.ciscospark.com/v1/rooms", axiosHeaders)
-.then(function(response){
-    console.log(response);
-})
-.catch(function(error) {
-    console.log(error);
-});
+    axios.get("https://api.ciscospark.com/v1/rooms", axiosHeaders)
+    .then(function(response){
+        console.log(response);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+}
+
