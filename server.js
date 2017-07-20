@@ -1,5 +1,6 @@
 'use-strict';
 
+const bodyParser = require('body-parser');
 const express = require(`express`);
 const session = require(`express-session`);
 const exphbs = require(`express-handlebars`);
@@ -15,6 +16,11 @@ const env = JSON.parse(fs.readFileSync('./env.json', 'utf8'));
 console.log(env);
 
 let server = express();
+
+server.use( bodyParser.json() );       // to support JSON-encoded bodies
+server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 server.use(session({
     secret: '2C44-4D44-WppQ38S',
@@ -80,7 +86,7 @@ server.post('/shopify/webhooks', function(req, res) {
     console.log('hello3');
     console.log(req.body);
 
-    res.send(200);
+    res.sendStatus(200);
 });
 
 server.listen(process.env.port || 80, function () {
