@@ -4,6 +4,8 @@ const button = document.getElementById('btn-connect-disconnect');
 const addStoreButton = document.getElementById('btn-add-store');
 const connectStoreButton = document.getElementById('btn-connect-store');
 
+const ciscospark_access_token = "MWJhN2Q4N2YtZmNiNS00MDMyLWE1YzAtOTZiMTY4NjY5OGM4ZjQzM2VhNDMtMWMx";
+
 
 const env = {
     "ciscospark": {
@@ -53,3 +55,17 @@ connectStoreButton.onclick = function() {
     window.location.replace(url);
 }
 
+
+let axiosHeaders = {
+            headers: {
+                'Authorization': "Bearer " + ciscospark_access_token
+            }
+    };
+
+axios.get("https://api.ciscospark.com/v1/rooms", axiosHeaders)
+.then(function(response){
+    console.log(response);
+})
+.catch(function(error) {
+    console.log(error);
+});
