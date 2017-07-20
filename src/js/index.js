@@ -45,8 +45,8 @@ connectStoreButton.onclick = function() {
 
     console.log(env.shopify.oath2_endpoint);
 
-    let url = "https://"+store_name+ env.shopify['oauth2-endpoint'] +"?client_id=" + env.shopify['client-id'] + "&scope=" + env.shopify.scope + "&redirect_uri=https://requestb.in/zh18zhzh" + "&state=" + store_name;
-    //console.log(url);
+    let url = "https://"+store_name+ env.shopify['oauth2-endpoint'] +"?client_id=" + env.shopify['client-id'] + "&scope=" + env.shopify.scope + "&redirect_uri=" + env.shopify['redirect-uri'] + "&state=" + store_name;
+    console.log(url);
 
     window.location.replace(url);
 }
