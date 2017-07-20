@@ -78,6 +78,7 @@ server.post('/test', function(req, res) {
 server.post('/shopify/webhooks', function(req, res) {
     console.log(req.query);
     console.log('hello3');
+    console.log(req.data);
 
     res.send(200);
 });
