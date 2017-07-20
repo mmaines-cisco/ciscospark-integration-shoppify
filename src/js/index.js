@@ -1,3 +1,5 @@
+'use-strict'
+
 const button = document.getElementById('btn-connect-disconnect');
 const addStoreButton = document.getElementById('btn-add-store');
 const connectStoreButton = document.getElementById('btn-connect-store');
