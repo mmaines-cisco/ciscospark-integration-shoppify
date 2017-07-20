@@ -1,4 +1,4 @@
-'use-strict'
+'use-strict';
 
 const button = document.getElementById('btn-connect-disconnect');
 const addStoreButton = document.getElementById('btn-add-store');
@@ -10,7 +10,7 @@ const env = {
         "oauth2-endpoint": "https://api.ciscospark.com/v1/authorize",
         "client-secret": "b0e8dfac27bf6a374dcaec9ad6a763a6125b82a5f862c098a5e0a0d7ac4c4019",
         "client-id": "Cf14c66a547d565a58a107141a509e8f4d8a7367e7a9cd9966675387841c41ca9",
-        "redirect-uri": "http://138.68.111.114",
+        "redirect-uri": "http://162.243.24.208",
         "response-type": "code",
         "scope": "spark:rooms_read,spark:messages_write"
     },
@@ -22,7 +22,7 @@ const env = {
             "access_token": "",
         },
         "nonce": "",
-        "redirect-uri": "http://138.68.111.114",
+        "redirect-uri": "http://162.243.24.208",
         "scope": "write_orders,read_customers",
         "devStore": {
             "isDevStore": true,

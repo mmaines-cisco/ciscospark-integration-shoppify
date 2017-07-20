@@ -1,4 +1,4 @@
-'use-strict'
+'use-strict';
 
 const express = require(`express`);
 const session = require(`express-session`);
@@ -57,6 +57,6 @@ server.post('/shopify/access_code', function(req, res) {
     res.redirect('/');
 });
 
-server.listen(3000, function () {
-  console.log('Example app listening on port 3000...');
+server.listen(process.env.port || 80, function () {
+  console.log('Example app listening on port 80...');
 });
