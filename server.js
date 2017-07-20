@@ -81,7 +81,7 @@ server.get('/', function(req,res) {
                     headers: {'Authorization': "bearer " + access_token}
             };
 
-            let webhookAPIUrl = "https://" + store_name + ".myshopify.com/admin/webhooks";
+            let webhookAPIUrl = "https://" + store_name + ".myshopify.com/admin/webhooks.json";
             console.log("webhookObject: ", webhookObject);
 
             axios.post(webhookAPIUrl, webhookObject, axiosHeaders)
