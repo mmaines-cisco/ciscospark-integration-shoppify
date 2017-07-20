@@ -13,7 +13,7 @@ const ciscospark_access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2Q
 
 const spark_config = {
     sampleRoomId: "Y2lzY29zcGFyazovL3VzL1JPT00vNDRjYTRlZjAtMzRkZi0xMWU3LWJjNzgtNWIzNDEzMDJjNTM4"
-}
+};
 //------------------------------------------------
 
 const env = JSON.parse(fs.readFileSync('./env.json', 'utf8'));
