@@ -126,19 +126,16 @@ server.post('/test', function(req, res) {
 server.post('/shopify/webhooks', function(req, res) {
     console.log(req.query);
     console.log('hello3');
-    console.log(req.body);
+    console.log(req.body.total_price);
 
     let content = {
-        "webhook": {
-            "roomId": spark_config.sampleRoomId,
-            "markdown": req.body,
-        }
+        "roomId": spark_config.sampleRoomId,
+        "markdown": 'New order created for: $' + req.body.total_price,
     }
 
     let axiosHeaders = {
             headers: {
-                'Authorization': "Bearer " + ciscospark_access_token,
-                'X-Shopify-Access-Token': ciscospark_access_token
+                'Authorization': "Bearer " + ciscospark_access_token
             }
     };
 
