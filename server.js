@@ -41,9 +41,10 @@ let auth = function(req, res, next) {
 };
 
 server.get('/', function(req,res) {
-    res.sendFile(path.join(__dirname, 'src', 'index.html')); 
-    console.log(req.query);
+    console.log(req.params);
     console.log("session.login: ", req.session.login);
+
+    res.sendFile(path.join(__dirname, 'src', 'index.html')); 
 });
 
 
@@ -51,7 +52,6 @@ server.post('/shopify/access_code', function(req, res) {
     console.log(res.query);
     req.session.login == "true";
 
-    req.query = "";
 
     res.redirect('/');
 });
