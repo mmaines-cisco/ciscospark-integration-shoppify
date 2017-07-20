@@ -44,12 +44,15 @@ server.get('/', function(req,res) {
     console.log(req.params);
     console.log("session.login: ", req.session.login);
 
+    console.log('hello');
+
     res.sendFile(path.join(__dirname, 'src', 'index.html')); 
 });
 
 server.post('/', function(req, res) {
     console.log(req.params);
     console.log("session.login: ", req.session.login);
+    console.log('hello2');
 
     res.send(200);
 });
@@ -59,6 +62,7 @@ server.post('/shopify/access_code', function(req, res) {
     console.log(res.query);
     req.session.login == "true";
 
+    console.log('hello3');
 
     res.redirect('/');
 });
