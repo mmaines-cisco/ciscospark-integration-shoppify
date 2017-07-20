@@ -43,9 +43,10 @@ let auth = function(req, res, next) {
 };
 
 server.get('/', function(req,res) {
-    if(req.params) {
-        console.log(req.params.code);
-        res.send(200);
+
+    if(req.pquery.code) {
+        console.log(req.query.code);
+        res.sendCode(200);
     }  
     else
         res.sendFile(path.join(__dirname, 'index.html')); 
