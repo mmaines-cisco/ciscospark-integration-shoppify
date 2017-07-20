@@ -48,7 +48,7 @@ server.get('/', function(req,res) {
         console.log(req.query.code);
         res.query = "";
 
-        axios.post('https://usless-book-store.myshopify.com/admin/oauth/access_token', {
+        axios.post('https://' + req.query.state + '.myshopify.com/admin/oauth/access_token', {
             client_id: env.shopify['client-id'],
             client_secret: env.shopify['client-secret'],
             'code': req.query.code
