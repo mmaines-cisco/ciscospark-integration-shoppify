@@ -46,10 +46,24 @@ server.get('/', function(req,res) {
 
     if(req.query.code) {
         console.log(req.query.code);
-        res.send(200);
+        res.query = "";
+
+        axios.post('https://usless-book-store.myshopify.com/admin/oauth/access_token', {
+            client_id: env.shopify['client-id'],
+            client_secret: env.shopify['client-secret'],
+            'code': req.query.code
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send(500);
+            return;
+        });
     }  
-    else
-        res.sendFile(path.join(__dirname, 'index.html')); 
+
+    res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
 server.post('/', function(req, res) {
