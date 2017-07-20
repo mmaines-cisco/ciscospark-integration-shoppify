@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Shopify Integration</title>
+        <link rel="stylesheet" href="/css/landing-page.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="title-and-connect">
+                <div class="title-column">
+                    <div class="title">
+                        <img class="integration-logo" src="/img/logo.png" />
+                    </div>
+                </div>
+
+                <input  type="text" value="" placeholder="Enter the store you wish to connect"/>
+
+                <div class="button-container">
+                    <button id="btn-connect-disconnect" class="btn-connect-disconnect">CONNECT</button>
+                </div> 
+            </div>
+
+            <div class="info">
+                <div class="info-header">
+                    <h1>Shopify</h1>
+                    <h4>Get notifications, stright to a cisco spark room of your choice, for all of your orders, fullfilments and refunds in Shopify</h4>
+                </div>
+                </br>
+                <span class="description">
+                <p>
+                    jifreoisjdfoijdsocssailnlidsnglifdnglifnvzufdnlidznvziudfnvlizdufnvulizdnfv.liudznfviufdznviulfdznvli
+                    jdsnfiliuhfiuwheiufhewuifhewiuhfiuwehfuiewhfiuhweuifhiuwehfiuhwefiuhwiufehiewuhfiewhfeiuwhfiuewhfeiwe
+                    hfhfhfuisskskdfsjoiwjowijeowijodijwoejdoiwjeofjoiewjfoiewjfoiewjfioewjfiowjefiowjefowiejfowiejfowiejf
+                </p>
+                </span>
+
+                <div class="manage-connected-stores">
+                    <table class="w3-table w3-bordered w3-hoverable">
+                        <tr>
+                            <th>Store Name</th> 
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Usless Book Store</td>
+                            <td><button style="background-color:red;" >Disconnect Store</button><td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width: 20%; background-color:green;">Add a Store</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+                        <input type="text" placeholder="store name" id="input-store-name"/>
+                        <button id="btn-connect-store"> Connect Store </button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/js/index.js"></script>
+    </body>
+</html>
