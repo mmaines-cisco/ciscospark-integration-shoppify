@@ -67,8 +67,8 @@ server.get('/', function(req,res) {
     res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
-server.post('/test', function(req, res) {
-    
+server.post('/test', auth, function(req, res) {
+    res.send(200);
 });
 
 server.post('/shopify/access_code', function(req, res) {
