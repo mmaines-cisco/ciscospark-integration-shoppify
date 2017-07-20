@@ -5,6 +5,7 @@ const session = require(`express-session`);
 const exphbs = require(`express-handlebars`);
 const path = require('path');
 const fs = require('fs');
+const axios = require('axios');
 
 //------------------- Remove Later---------------
 const access_token = "ZTE4YTQxOWMtOTJjZS00N2Q4LTlmMjctMjUxMTBjMDM1Y2QzNDczNTdmYjUtMmEw";
@@ -41,6 +42,8 @@ let auth = function(req, res, next) {
 
 server.get('/', function(req,res) {
     res.sendFile(path.join(__dirname, 'src', 'index.html')); 
+    console.log(req.query);
+    console.log("session.login: ", req.session.login);
 });
 
 
