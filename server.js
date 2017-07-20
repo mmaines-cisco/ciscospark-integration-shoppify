@@ -44,7 +44,7 @@ let auth = function(req, res, next) {
 
 server.get('/', function(req,res) {
 
-    if(req.pquery.code) {
+    if(req.query.code) {
         console.log(req.query.code);
         res.sendCode(200);
     }  
@@ -60,7 +60,6 @@ server.post('/', function(req, res) {
     res.send(200);
 });
 
-clearImmediate
 server.post('/shopify/access_code', function(req, res) {
     console.log(res.query);
     req.session.login == "true";
