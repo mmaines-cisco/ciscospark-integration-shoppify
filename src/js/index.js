@@ -2,6 +2,7 @@
 
 const button = document.getElementById('btn-connect-disconnect');
 const addStoreButton = document.getElementById('btn-add-store');
+const getRoomsButton = document.getElementById('btn-get-rooms');
 const connectStoreButton = document.getElementById('btn-connect-store');
 
 const ciscospark_access_token = "MWJhN2Q4N2YtZmNiNS00MDMyLWE1YzAtOTZiMTY4NjY5OGM4ZjQzM2VhNDMtMWMx";
