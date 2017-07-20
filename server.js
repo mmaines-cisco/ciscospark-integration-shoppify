@@ -48,7 +48,7 @@ server.get('/', function(req,res) {
     if(req.params.code)
         res.send(200);
     else
-        res.sendFile(path.join(__dirname, 'src', 'index.html')); 
+        res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
 server.post('/', function(req, res) {
